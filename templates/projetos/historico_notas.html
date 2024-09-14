@@ -1,0 +1,29 @@
+<!-- templates/projetos/historico_notas.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Histórico de Notas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ciclo</th>
+            <th>Título do Projeto</th>
+            <th>Nota</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for projeto in projetos %}
+        <tr>
+            <td>{{ projeto.ciclo }}</td>
+            <td>{{ projeto.titulo }}</td>
+            <td>{{ projeto.nota }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">Nenhuma nota disponível.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- templates/contas/entrar.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Entrar</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+</form>
+<p>Não possui uma conta? <a href="{% url 'registrar' %}">Registrar</a></p>
+{% endblock %}

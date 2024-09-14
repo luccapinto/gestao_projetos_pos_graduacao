@@ -1,0 +1,17 @@
+<!-- templates/projetos/detalhes_projeto.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ projeto.titulo }}</h2>
+<p><strong>Status:</strong> {{ projeto.get_status_display }}</p>
+<p><strong>Data de Submissão:</strong> {{ projeto.data_submissao|date:"d/m/Y H:i" }}</p>
+<p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+<p><strong>Arquivo:</strong> <a href="{{ projeto.arquivo.url }}">Baixar Arquivo</a></p>
+{% if projeto.nota %}
+<p><strong>Nota:</strong> {{ projeto.nota }}</p>
+{% endif %}
+{% if projeto.feedback %}
+<p><strong>Feedback:</strong> {{ projeto.feedback }}</p>
+{% endif %}
+{% endblock %}
